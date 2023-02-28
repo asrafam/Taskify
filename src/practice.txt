@@ -1,0 +1,70 @@
+// let num : number = 2;
+
+
+
+// //for Object
+// type Person = {
+//   name : string ,
+//   age? : number
+// }
+// let person : Person ={
+//   name : 'umar',
+//   age : 5
+// }
+
+
+// //Array
+// let per : Person[] = [
+//   {
+//     name : 'umar',
+//     age : 2
+//   },{
+//     name : 'umar',
+//     age : 4
+//   },{
+//     name : 'asra',
+//     age : 5
+//   }
+// ]
+
+
+
+// //tuple
+// let tuple : [number , string] = [1,"a"]
+
+
+
+// //to give two types
+// let a : number | string;
+// a=4;
+// a="s";
+
+// //must give param type
+// function Print(pr: number){
+//   console.log(pr)
+// }
+
+// //to assign function
+// let Add : (Num1:number,Num2:number)=> number;
+// let Return_nothing : (Num1:number,Num2:number)=> never;
+// let Return_undefine : (Num1:number,Num2:number)=> void;
+
+// // Add(Num1,Num2){
+// //  let sum : number = Num1+Num2
+// //  return sum;
+// // }
+
+// //interface 
+// interface test{
+//   name : string,
+//   time : number
+// }
+
+// //how to add in type & interface
+// type add = test & {
+//   age : number
+// }
+
+// interface chem extends test{
+//   que : number
+// }

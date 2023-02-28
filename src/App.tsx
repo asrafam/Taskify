@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Box } from "@mui/material";
+import SearchhBox from "./components/SearchBox";
+import { useEffect, useState } from "react";
+import { Todo} from "./components/model";
+import Todos from "./Todos";
 
-function App() {
+const App: React.FC = () => {
+  const [todo, setTodo] = useState<string>("");
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [user , setUser] = useState<Object>({})
+
+
+  // const handleAdd = (e : React.ChangeEvent<HTMLInputElement>)=>{
+  // e.preventDefault();
+  // }
+
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (todo) {
+      setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
+      setTodo("");
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box className="App">
+      <span className="heading">Taskify</span>
+      <SearchhBox todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      <Todos todos={todos} setTodos={setTodos} />
+    </Box>
   );
-}
+};
 
 export default App;
